@@ -1,0 +1,20 @@
+<div class="center-align">
+  <div class="hoverable">
+    <div class="z-depth-3">
+      <h1 class="card-panel #26c6da cyan lighten-1">New Artist</h1>
+    </div>
+  </div>
+</div>
+<%= form_with(model: @artist, local: true, class: "form") do |f| %> 
+  <div class="input">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, placeholder: "Name" %>
+  </div>
+  <div class="input">
+    <div class= "btn blue" >
+      <div class="center-align">
+        <%= f.button  %>
+      </div>
+    </div>
+  </div>
+  <% end %>

@@ -1,0 +1,24 @@
+<div class="center-align">
+  <div class="hoverable">
+    <div class="z-depth-3">
+      <h1 class="card-panel #c2185b pink darken-2">Edit Billboard</h1>
+    </div>
+  </div>
+</div>
+<%= form_with(model: @billboard, local: true, class: "form") do |f| %> 
+  <div class="input">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, placeholder: "Name" %>
+  </div>
+  <div class="input">
+    <%= f.label :genre %>
+    <%= f.text_field :genre, required: true, placeholder: "Genre" %>
+  </div>
+  <div class="div-container" >
+  <div class="button">
+        <%= f.button class: "btn blue" %>
+        </div>
+        <%= link_to "Back to Billboards", billboards_path, class: "btn blue" %>
+</div>
+</div>
+  <% end %>

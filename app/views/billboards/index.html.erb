@@ -1,0 +1,33 @@
+<div class="center-align">
+  <div class="hoverable">
+    <div class="z-depth-3">
+      <h1 class="card-panel #c2185b pink darken-2">Top Music Billboards</h1>
+    </div>
+  </div>
+</div>
+<div class="center-align" >
+<%= link_to "View Artists", artists_path, class: "btn cyan"%>
+</div>
+    <br>
+    <br>
+    <div class="center-align">
+    <%= link_to "New Billboard", new_billboard_path, class: "btn blue" %>
+    </div>
+    <br>
+    <br>
+    <% @billboards.each do |billboard| %>
+  <div class="center-align">
+    <div class="card-panel hoverable">
+      <h5><%= link_to billboard.name, billboard_path(billboard) %></h5>
+    </div>
+  </div>
+      <br>
+      <br>
+      <div class="div-container">
+      <%= link_to "Delete this Billboard", billboard_path(billboard), method: :delete, class: "btn blue" %>
+      <%= link_to "Edit this Billboard", edit_billboard_path(billboard), class: "btn blue" %>
+      </div>
+
+
+
+<% end %>

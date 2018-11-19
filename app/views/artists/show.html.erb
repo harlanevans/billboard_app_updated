@@ -1,0 +1,24 @@
+<div class="center-align">
+  <div class="hoverable">
+    <div class="z-depth-3">
+      <h1 class='card-panel #3f51b5 indigo'>
+      <%= @artist.name %></h1>
+      </div>
+      </div>
+      </div>
+      <div class="card-panel teal lighten-2">
+      <h1><%= @artist.songs %></h1>
+      </div>
+      <h2>Songs</h2>
+      <% @artist.songs.each do |song| %>
+        <%= %>
+        <% end %>
+    
+
+<br>
+<br>
+<div class="div-container" >
+<%= link_to "Back to Artists", artists_path, class: "btn blue" %>
+<%= link_to "Add an Artists Song", new_artist_song_path(@artist), class: "btn blue"%>
+<%= link_to "Edit Artist", edit_artist_path(@artist), class: "btn blue" %>
+</div>
