@@ -1,7 +1,18 @@
+<div class="center-align">
+<div class="hoverable">
+<div class="z-depth-3">
+<div class="card-panel #388e3c cyan darken-2">
 
-<h1>Songs
-this is the page yo</h1>
+<h1>
+<strong>Title:</strong>
+<%= @song.title %>
+</h1>
+</div>
+</div>
+</div>
+</div>
 
-<%= @artist.songs.each do |song| %>
-  <%= song.title %>
-  <% end %>
+<div class="center-align">
+<%= link_to 'Edit', edit_artist_song_path(@artist, @song) %> |
+<%= link_to 'Back', artist_songs_path(@artist) %>
+</div>

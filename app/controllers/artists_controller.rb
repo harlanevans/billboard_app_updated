@@ -1,6 +1,6 @@
 class ArtistsController < ApplicationController
   
-  before_action :set_artist, except: [:index, :new, :create]
+  before_action :set_artist, only: [:show, :edit, :update, :destroy]
   
   
   def index
@@ -28,7 +28,7 @@ class ArtistsController < ApplicationController
   def create
     @artist = Artist.new(artist_params)
     if @artist.save
-      redirect_to artist_path(@artist)
+      redirect_to artists_path
     else
       render :new
     end
@@ -36,7 +36,7 @@ class ArtistsController < ApplicationController
 
   def destroy
     @artist.destroy
-    redirect_to artists_path
+    redirect_to artists_url
   end
 
       private

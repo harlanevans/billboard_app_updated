@@ -12,5 +12,31 @@
 <br>
 <br>
 <div class="center-align" >
+<%= link_to 'Add Song', new_billboard_song_path(@billboard), class: "btn blue" %>
 <%= link_to "Back to Billboards", billboards_path, class: "btn blue" %>
 </div>
+<br>
+<br>
+<% if @songs.any? %>
+  <div class="row">
+		<% @songs.each do |song| %>
+		  <div class="col s12 m6">
+        <div class="card purple lighten-1">
+          <div class="card-content white-text">
+            <span class="card-title"><%= song.title %></span>
+            <p>Artist: <%= song.artist.name %></p>
+          </div>
+          <div class="card-action">
+            <%= link_to 'Go To Song', artist_song_path(song.artist, song) %>
+            <%= link_to 'Remove From Billboard', remove_billboard_song_path(@billboard, song), method: :delete %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% else %>
+    <div class="center-align" >
+  <h3>No Songs On Billboard, Please Add One</h3>
+  </div>
+<% end %>
+<br>
+<br>

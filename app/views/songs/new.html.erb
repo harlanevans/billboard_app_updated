@@ -1,20 +1,14 @@
 <div class="center-align">
   <div class="hoverable">
     <div class="z-depth-3">
-      <h1 class="card-panel #c2185b pink darken-2">New Song</h1>
-    </div>
-  </div>
-</div>
-<%= form_for [@artist, @billboard, @song] do |f| %> 
-  <div class="input">
-    <%= f.label :title %>
-    <%= f.text_field :title, required: true, placeholder: "Name" %>
-  </div>
-  <div class="div-container" >
-  <div class="button">
-        <%= f.button class: "btn blue" %>
-        </div>
-        <%= link_to "Back to Artist", artists_path, class: "btn blue" %>
-</div>
-</div>
-  <% end %>
+      <h1 class="card-panel #c2185b purple darken-2">New Song</h1>
+
+      </div>
+      </div>
+      </div>
+      
+      <br>
+      <%= render 'form', song: @song %>
+      <br>
+      <%= link_to 'Back', artist_songs_path(@artist) %>
+      

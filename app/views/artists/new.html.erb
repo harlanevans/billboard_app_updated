@@ -5,16 +5,8 @@
     </div>
   </div>
 </div>
-<%= form_with(model: @artist, local: true, class: "form") do |f| %> 
-  <div class="input">
-    <%= f.label :name %>
-    <%= f.text_field :name, required: true, placeholder: "Name" %>
-  </div>
-  <div class="input">
-    <div class= "btn blue" >
-      <div class="center-align">
-        <%= f.button  %>
-      </div>
-    </div>
-  </div>
-  <% end %>
+
+<br>
+<%= render 'form', artist: @artist %>
+<br>
+<%= link_to 'Back', artists_path, class: "btn cyan" %>

@@ -5,27 +5,24 @@
     </div>
   </div>
 </div>
-<div class="center-align" >
-<%= link_to "View Artists", artists_path, class: "btn cyan"%>
-</div>
-    <br>
-    <br>
-    <div class="center-align">
-    <%= link_to "New Billboard", new_billboard_path, class: "btn blue" %>
-    </div>
-    <br>
-    <br>
+<br>
     <% @billboards.each do |billboard| %>
-  <div class="center-align">
-    <div class="card-panel hoverable">
+      <div class="center-align">
+      <div class="card-panel hoverable">
+      <h6>Name: </h6>
       <h5><%= link_to billboard.name, billboard_path(billboard) %></h5>
-    </div>
-  </div>
+      <br>
+      <h6>Number Of Songs: </h6>
+      <p><%= billboard.songs.count %></p>
+      </div>
+      </div>
       <br>
       <br>
       <div class="div-container">
-      <%= link_to "Delete this Billboard", billboard_path(billboard), method: :delete, class: "btn blue" %>
+      <%= link_to "New Billboard", new_billboard_path, class: "btn blue" %>
+      <%= link_to 'All Artists', artists_path, class: 'btn blue' %>
       <%= link_to "Edit this Billboard", edit_billboard_path(billboard), class: "btn blue" %>
+      <%= link_to "Delete this Billboard", billboard_path(billboard), method: :delete, class: "btn blue", data: { confirm: 'Are you sure?' } %>
       </div>
 
 
