@@ -42,7 +42,7 @@ class SongsController < ApplicationController
       private
 
       def song_params
-        params.require(:song).permit(:title, :belongs_to, :belongs_to)
+        params.require(:song).permit(:title)
       end
 
       def set_song

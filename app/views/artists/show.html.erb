@@ -1,4 +1,13 @@
-<div class="center-align">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo"><h4>Welcome, <%= current_user.first_name %>!</h4></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href='billboards'>Billboards</a></li>
+        <li><a href='artists'>Artists</a></li>
+        <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </div>
+  </nav><div class="center-align">
 <div class="hoverable">
 <div class="z-depth-3">
 <h1 class='card-panel #3f51b5 indigo'>Name: <%= @artist.name %>

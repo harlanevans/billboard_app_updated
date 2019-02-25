@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'billboards#index'
+  devise_for :users
 
   resources :billboards
 
@@ -13,3 +14,4 @@ Rails.application.routes.draw do
   delete 'remove_billboard_song/:id/:song_id', to: 'billboards#remove_song', as: 'remove_billboard_song'
   
 end
+ 

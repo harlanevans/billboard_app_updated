@@ -1,12 +1,20 @@
-<h1>Add A Song To This Billboard: <%= @billboard.name %> </h1>
-
-<ul>
-	<% @songs.each do |song| %>
-	  <li>
-	    <%= link_to song.info, add_billboard_song_path(@billboard, song), method: :post %>
-	  </li>
-	  <hr />
-	<% end %>
-</ul>
-
-<%= link_to 'Back', billboards_path, class: 'btn red' %>
+<div class="center-align">
+  <div class="hoverable">
+    <div class="z-depth-3">
+      <h1 class='card-panel #e040fb blue accent-4'>Add A Song To: '<%= @billboard.name %>'</h1>	
+		</div>
+	</div>
+</div>
+<div class='container'>
+	<div class='center-align''>
+	<ul>
+		<% @songs.each do |song| %>
+	  	<li>
+	    	<%= link_to song.info, add_billboard_song_path(@billboard, song), method: :post %>
+	  	</li>
+	  	<hr />
+		<% end %>
+	</ul>
+	</div>
+	<%= link_to 'Back', billboards_path, class: 'btn red' %>
+</div>
